@@ -6,7 +6,7 @@ function hide() {
 
 const form = document.querySelector("form");
 
-form.onsubmit = function(event) {
+function findLover(event) {
   event.preventDefault();
   const question1 = parseInt(document.querySelector("#selection").value);
   console.log(typeof question1);
@@ -19,4 +19,18 @@ form.onsubmit = function(event) {
   } else if (question1 === 3 || question1 === 5 || question1 === 6 || question1 === 9) {
     document.querySelector("#date3").removeAttribute("class")
   }
+};
+
+function advertisement() {
+  window.alert("Love potion for sale at Goats.com!")
+  form.removeEventListener("submit", advertisement)
 }
+
+function spicy() {
+  form.style.backgroundColor = "hotpink";
+  // form.removeEventListener("mouseover", spicy);
+}
+
+form.addEventListener("submit", findLover);
+form.addEventListener("submit", advertisement)
+form.addEventListener("mouseover", spicy)
